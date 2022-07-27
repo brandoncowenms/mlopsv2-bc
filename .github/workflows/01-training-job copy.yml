@@ -32,4 +32,4 @@ jobs:
         az configure --defaults workspace="mlw-dev-mlops"
     - name: Create Azure Machine Learning workspace
       run: |
-      az ml job create --file ./src/job.yml
+        az ml job create --file ./src/job.yml
