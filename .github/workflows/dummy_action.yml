@@ -1,4 +1,4 @@
-name: Linting
+name: dummyaction
 
 on:
   workflow_dispatch:
