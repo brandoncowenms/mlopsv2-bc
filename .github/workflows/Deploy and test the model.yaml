@@ -33,14 +33,12 @@ jobs:
         az configure --defaults workspace="mlw-dev-mlops"
     - name: Create endpoint and deploy
       run: |
-        export ENDPOINT_NAME="diabetes-endpoint"
+        # export ENDPOINT_NAME="diabetes-endpoint"
         az ml model create --name "diabetes-model" \
                     --type "mlflow_model" \
                     --path "Azureml://jobs/$JOB_NAME/outputs/artifacts/model"
                     
-        az ml online deployment create --name diabetes-deployment --endpoint $ENDPOINT_NAME -f deployment.yaml --all-traffic
-        #az ml online-deployment create --name sklearn-deployment --endpoint $ENDPOINT_NAME -f endpoints/online/mlflow/sklearn-deployment.yaml --all-traffic
-        
+        az ml online deployment create --name diabetes-deployment --endpoint diabetes-deployment -f deployment.yaml --all-traffic        
         
         
         
