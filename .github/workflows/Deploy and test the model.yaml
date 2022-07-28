@@ -33,7 +33,6 @@ jobs:
         az configure --defaults workspace="mlw-dev-mlops"
     - name: Create endpoint and deploy
       run: |
-        cd src
         export ENDPOINT_NAME="diabetes-endpoint"
         az ml model create --name "diabetes-model" \
                     --type "mlflow_model" \
