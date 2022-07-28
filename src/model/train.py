@@ -40,7 +40,10 @@ def process_data(df):
                'Age']].values, df['Diabetic'].values
 
     # train/test split
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=0)
+    X_train, X_test, y_train, y_test = train_test_split(X,
+                                                        y,
+                                                        test_size=0.30,
+                                                        random_state=0)
 
     # return splits and encoder
     return X_train, X_test, y_train, y_test
@@ -48,7 +51,7 @@ def process_data(df):
 
 def train_model(reg_rate, X_train, X_test, y_train, y_test):
     # train model
-    model = LogisticRegression(C=1/reg_rate,
+    model = LogisticRegression(C=1 / reg_rate,
                                solver="liblinear").fit(X_train, y_train)
 
     # return model
