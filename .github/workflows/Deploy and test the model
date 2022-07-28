@@ -31,7 +31,7 @@ jobs:
       run: |
         az configure --defaults group="rg-dev-mlops"
         az configure --defaults workspace="mlw-dev-mlops"
-    - name: Create Azure Machine Learning workspace
+    - name: Create endpoint and deploy
       run: |
         cd src
         export ENDPOINT_NAME="diabetes-endpoint"
