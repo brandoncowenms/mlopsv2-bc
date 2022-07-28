@@ -33,7 +33,7 @@ jobs:
         az configure --defaults workspace="mlw-dev-mlops"
     - name: Create Model
       run: |
-        az ml model create --name "diabetes-model" --type "mlflow_model" --path "Azureml://jobs/$JOB_NAME/outputs/artifacts/model"    
+        az ml model create --name "diabetes-model" --type "mlflow_model" --path "Azureml://jobs/$JOB_NAME/outputs/artifacts/model" --resource-group "rg-dev-mlops"   
     - name: Deploy
       run: |
         az ml online deployment create --name diabetes-deployment --endpoint my-endpoint -f deployment.yaml --all-traffic
