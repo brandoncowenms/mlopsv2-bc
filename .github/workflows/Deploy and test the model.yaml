@@ -38,7 +38,7 @@ jobs:
                     --type "mlflow_model" \
                     --path "Azureml://jobs/$JOB_NAME/outputs/artifacts/model"
                     
-        az ml online deployment create --name diabetes-deployment --endpoint diabetes-deployment -f deployment.yaml --all-traffic        
+        az ml online deployment create --name diabetes-deployment --endpoint my-deployment -f deployment.yaml --all-traffic        
         
         
         
